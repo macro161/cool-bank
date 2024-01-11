@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  coolbank-db:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: coolbank_user
+      POSTGRES_PASSWORD: coolbank_password
+      POSTGRES_DB: coolbank_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/data/database
+
+volumes:
+  pgdata:
+    driver: local
